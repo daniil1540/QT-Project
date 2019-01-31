@@ -13,7 +13,7 @@ green = 0
 yelloworange = 0
 yellow = 0
 greenyellow = 0
-cvetligreen = 0
+white = 0
 orange = 0
 ottenokorange = 0
 brown = 0
@@ -26,16 +26,16 @@ for i in range(x):
         r, g, b = pixels[i, j]
         if r >= 248 and r <= 255 and g >= 3 and g <= 43 and b >= 43 and b <= 71:
             red += 1
-        elif r >= 0 and r <= 50 and g >= 0 and g <= 50 and b >= 63 and b <= 255:
+        elif r >= 0 and r <= 50 and g >= 0 and g <= 199 and b >= 63 and b <= 255:
             blue += 1
         elif r >= 239 and r <= 255 and g >= 208 and g <= 255 and b >= 0 and b <= 51:
             yellow += 1
         elif  r >= 228 and r <= 255 and g >= 155 and g <= 207 and b >= 0 and b <= 70:
             orange += 1
-        elif r >= 0 and r <= 34 and g >= 128 and g <= 200 and b >= 0 and b <= 120:
+        elif r >= 0 and r <= 153 and g >= 128 and g <= 255 and b >= 0 and b <= 159:
             green += 1
-        elif r >= 84 and r <= 153 and g >= 201 and g <= 255 and b >= 23 and b <= 159:
-            cvetligreen += 1
+        elif r >= 193 and r <= 255 and g >= 202 and g <= 255 and b >= 202 and b <= 255:
+            white += 1
         elif r >= 147 and r <= 255 and g >= 170 and g <= 255 and  b >= 0 and b <= 116:
             greenyellow += 1
         elif r >= 230 and r <= 255 and g >= 202 and g <= 255 and b >= 88 and b <= 183:
@@ -53,23 +53,63 @@ for i in range(x):
 
 
 vse = gray + ottenokpurple + brown + ottenokgray + ottenokorange + greenyellow + green
-vse += cvetligreen
+vse += white
 vse += orange
 vse += yellow
 vse += blue
 vse += red
-reds = str(red - (red // vse) * 100)
-blues = str(blue - (blue // vse) * 100)
-greens = str(green - (green // vse) * 100)
-oranges = str(orange - (orange // vse) * 100)
-yellows = str(yellow - (yellow // vse) * 100)
-yelloworanges = str(yelloworange - (yelloworange // vse) * 100)
-ottenokoranges = str(ottenokorange - (ottenokorange // vse) * 100)
-browns = str(brown - (brown // vse) * 100)
-purples = str(purple - (purple // vse) * 100)
-ottenokpurples = str(ottenokpurple - (ottenokpurple // vse) * 100)
-grays = str(gray - (gray // vse) * 100)
-ottenokgrays = str(ottenokgray - (ottenokgray // vse) * 100)
+
+reds = 'red - '
+
+blues = 'blue - '
+
+greens = 'green - '
+
+oranges = 'orange - '
+
+whites = 'white - '
+
+yellows = 'yellow - '
+
+yelloworanges = 'yelloworange - '
+
+ottenokoranges = 'ottenokorange - '
+
+browns = 'brown - '
+
+purples = 'purple - '
+
+ottenokpurples = 'ottenokpurple - '
+
+grays = 'gray - '
+
+ottenokgrays = 'ottenokgray - '
+
+reds += str((red / vse) * 100)
+
+blues += str((blue / vse) * 100)
+
+greens += str((green / vse) * 100)
+
+oranges += str((orange / vse) * 100)
+
+yellows += str((yellow / vse) * 100)
+
+yelloworanges += str((yelloworange / vse) * 100)
+
+ottenokoranges += str((ottenokorange / vse) * 100)
+
+browns += str((brown / vse) * 100)
+
+purples += str((purple / vse) * 100)
+
+ottenokpurples += str((ottenokpurple / vse) * 100)
+
+grays += str((gray / vse) * 100)
+
+ottenokgrays += str((ottenokgray / vse) * 100)
+
+whites += str((white / vse) * 100)
 
 class Example(QWidget):
     def __init__(self):
@@ -86,47 +126,51 @@ class Example(QWidget):
 
         self.labelblue = QLabel(self)
         self.labelblue.setText(blues)
-        self.labelblue.move(40, 40)
+        self.labelblue.move(40, 60)
 
         self.labelgreen = QLabel(self)
         self.labelgreen.setText(greens)
-        self.labelgreen.move(40, 50)
+        self.labelgreen.move(40, 90)
 
         self.labelorange = QLabel(self)
         self.labelorange.setText(oranges)
-        self.labelorange.move(40, 60)
+        self.labelorange.move(40, 120)
 
         self.labelyellow = QLabel(self)
         self.labelyellow.setText(yellows)
-        self.labelyellow.move(40, 70)
+        self.labelyellow.move(40, 150)
 
         self.labelyelloworange = QLabel(self)
         self.labelyelloworange.setText(yelloworanges)
-        self.labelyelloworange.move(40, 80)
+        self.labelyelloworange.move(40, 180)
 
         self.labelottenokorange = QLabel(self)
         self.labelottenokorange.setText(ottenokoranges)
-        self.labelottenokorange.move(40, 90)
+        self.labelottenokorange.move(40, 210)
 
         self.labelbrown = QLabel(self)
         self.labelbrown.setText(browns)
-        self.labelbrown.move(40, 100)
+        self.labelbrown.move(40, 240)
 
         self.labelpurple = QLabel(self)
         self.labelpurple.setText(purples)
-        self.labelpurple.move(40, 110)
+        self.labelpurple.move(40, 270)
 
         self.labelottenokpurple = QLabel(self)
         self.labelottenokpurple.setText(ottenokpurples)
-        self.labelottenokpurple.move(40, 120)
+        self.labelottenokpurple.move(40, 300)
 
         self.labelgray = QLabel(self)
         self.labelgray.setText(grays)
-        self.labelgray.move(40, 130)
+        self.labelgray.move(40, 330)
 
         self.labelottenokgray = QLabel(self)
         self.labelottenokgray.setText(ottenokgrays)
-        self.labelottenokgray.move(40, 140)
+        self.labelottenokgray.move(40, 360)
+
+        self.labelcvetligreens = QLabel(self)
+        self.labelcvetligreens.setText(whites)
+        self.labelcvetligreens.move(40, 390)
 
 
 if __name__ == '__main__':
