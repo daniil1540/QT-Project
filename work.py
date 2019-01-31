@@ -58,6 +58,19 @@ vse += orange
 vse += yellow
 vse += blue
 vse += red
+reds = str(red - (red // vse) * 100)
+blues = str(blue - (blue // vse) * 100)
+greens = str(green - (green // vse) * 100)
+oranges = str(orange - (orange // vse) * 100)
+yellows = str(yellow - (yellow // vse) * 100)
+yelloworanges = str(yelloworange - (yelloworange // vse) * 100)
+ottenokoranges = str(ottenokorange - (ottenokorange // vse) * 100)
+browns = str(brown - (brown // vse) * 100)
+purples = str(purple - (purple // vse) * 100)
+ottenokpurples = str(ottenokpurple - (ottenokpurple // vse) * 100)
+grays = str(gray - (gray // vse) * 100)
+ottenokgrays = str(ottenokgray - (ottenokgray // vse) * 100)
+
 class Example(QWidget):
     def __init__(self):
         super().__init__()
@@ -68,56 +81,56 @@ class Example(QWidget):
         self.setWindowTitle('Шестая программа')
 
         self.labelred = QLabel(self)
-        self.labelred.setText("red -", (red // vse) * 100)
+        self.labelred.setText(reds)
         self.labelred.move(40, 30)
 
         self.labelblue = QLabel(self)
-        self.labelblue.setText("blue -", (blue // vse) * 100)
+        self.labelblue.setText(blues)
         self.labelblue.move(40, 40)
 
         self.labelgreen = QLabel(self)
-        self.labelgreen.setText("green -", (green // vse) * 100)
+        self.labelgreen.setText(greens)
         self.labelgreen.move(40, 50)
 
         self.labelorange = QLabel(self)
-        self.labelorange.setText("orange -", (orange // vse) * 100)
+        self.labelorange.setText(oranges)
         self.labelorange.move(40, 60)
 
         self.labelyellow = QLabel(self)
-        self.labelyellow.setText("yellow -", (yellow // vse) * 100)
+        self.labelyellow.setText(yellows)
         self.labelyellow.move(40, 70)
 
         self.labelyelloworange = QLabel(self)
-        self.labelyelloworange.setText("yelloworange -", (yelloworange // vse) * 100)
+        self.labelyelloworange.setText(yelloworanges)
         self.labelyelloworange.move(40, 80)
 
         self.labelottenokorange = QLabel(self)
-        self.labelottenokorange.setText("ottenokorange -", (ottenokorange // vse) * 100)
+        self.labelottenokorange.setText(ottenokoranges)
         self.labelottenokorange.move(40, 90)
 
         self.labelbrown = QLabel(self)
-        self.labelbrown.setText("brown -", (brown // vse) * 100)
+        self.labelbrown.setText(browns)
         self.labelbrown.move(40, 100)
 
         self.labelpurple = QLabel(self)
-        self.labelpurple.setText("purple -", (purple // vse) * 100)
+        self.labelpurple.setText(purples)
         self.labelpurple.move(40, 110)
 
         self.labelottenokpurple = QLabel(self)
-        self.labelottenokpurple.setText("ottenokpurple -", (ottenokpurple // vse) * 100)
+        self.labelottenokpurple.setText(ottenokpurples)
         self.labelottenokpurple.move(40, 120)
 
         self.labelgray = QLabel(self)
-        self.labelgray.setText("gray -", (gray // vse) * 100)
+        self.labelgray.setText(grays)
         self.labelgray.move(40, 130)
 
         self.labelottenokgray = QLabel(self)
-        self.labelottenokgray.setText("ottenokgray -", (ottenokgray // vse) * 100)
+        self.labelottenokgray.setText(ottenokgrays)
         self.labelottenokgray.move(40, 140)
 
 
-    if __name__ == '__main__':
-        app = QApplication(sys.argv)
-        ex = Example()
-        ex.show()
-        sys.exit(app.exec())
+if __name__ == '__main__':
+    app = QApplication(sys.argv)
+    ex = Example()
+    ex.show()
+    sys.exit(app.exec())
